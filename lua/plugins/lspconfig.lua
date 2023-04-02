@@ -24,7 +24,7 @@ return {
                     ensure_installed = {
                         "jdtls",
                         "lua_ls","jsonls","yamlls","rust_analyzer",
-                        "pyright","cmake","vimls","bashls","marksman","lemminx","taplo",
+                        "pyright","neocmake","vimls","bashls","marksman","lemminx","taplo",
                         "tsserver","cssls","html","cssls","vuels"
                     },
                     automatic_installation = false
@@ -37,7 +37,7 @@ return {
             capabilities.textDocument.foldingRange = {dynamicRegistration = false,lineFoldingOnly = true} -- nvim-ufo插件配置代码折叠
             capabilities.textDocument.completion.completionItem.snippetSupport = true --jsonls,html,cssls需要的代码片段支持
             local servers = {
-                "clangd","pyright","cmake","vimls","bashls","marksman","lemminx","taplo",
+                "clangd","pyright","neocmake","vimls","bashls","marksman","lemminx","taplo",
                 "tsserver","cssls","html","vuels"
             }
 
