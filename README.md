@@ -28,11 +28,11 @@
 
 - linux:
 
-- 打开终端输入: `git clone https://github.com/uniful/lazynvim.git ~/.config/nvim`
+- 打开终端输入: `git clone https://github.com/gleauth/alcvim.git ~/.config/nvim`
 
 - windows:
 
-- 打开PowerShell输入: `git clone https://github.com/uniful/lazynvim.git $env:LOCALAPPDATA\nvim`
+- 打开PowerShell输入: `git clone https://github.com/gleauth/alcvim.git $env:LOCALAPPDATA\nvim`
 
 - 终端输入nvim，插件便会自动安装
 
@@ -74,7 +74,7 @@
 
 3. bash调试，使用的是mason安装调试器，毕竟作者推荐的就是这个。
 
-3. 如果不想neovim实现调试功能，则可以删除debugger文件夹内所有文件，以及plugins/dapconfig.lua文件。
+4. 如果不想neovim实现调试功能，则可以删除debugger文件夹内所有文件，以及plugins/dapconfig.lua文件。
 
 ### Diagnotics
 
