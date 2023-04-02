@@ -1,15 +1,5 @@
 -- 笔记和任务清单
 return {
-    -- vim的org模式复刻
-    {
-        "nvim-orgmode/orgmode",
-        lazy = true,
-        ft = "org",
-        config = function ()
-            require("orgmode").setup()
-            require("orgmode").setup_ts_grammar()
-        end
-    },
     -- 结构化笔记、项目和任务管理、时间跟踪、幻灯片、编写排版文档
     {
         "nvim-neorg/neorg",
