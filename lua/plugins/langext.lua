@@ -38,5 +38,32 @@ return {
         lazy = true,
         event = {"BufRead Cargo.toml"},
         opts = {}
+    },
+    {
+        "simrat39/rust-tools.nvim",
+        lazy = true,
+        ft = "rust",
+        config = function ()
+            local opts = {
+                server = {
+                    diagnostics = {enable = true},
+                    imports = {granularity = {group = "module"},prefix = "self"},
+                    cargo = {buildScripts = {enable = true}},
+                    procMacro = {enable = true},
+                    on_attach = function (_,bufnr)
+                        vim.keymap.set("n", "<leader>rh", require("rust-tools").hover_actions.hover_actions, { buffer = bufnr })
+                        vim.keymap.set("n", "<Leader>ra", require("rust-tools").code_action_group.code_action_group, { buffer = bufnr })
+                    end
+                },
+                dap = {
+                    adapter = {
+                        type = "executable",
+                        command = "lldb-vscode",
+                        name = "lldb"
+                    }
+                }
+            }
+            require("rust-tools").setup(opts)
+        end
     }
 }
