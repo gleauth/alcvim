@@ -70,17 +70,6 @@ return {
                 },
                 capabilities = capabilities
             })
-            lspconfig["rust_analyzer"].setup({
-                settings = {
-                    ["rust-analyzer"] = {
-                        diagnostics = {enable = true},
-                        imports = {granularity = {group = "module"},prefix = "self"},
-                        cargo = {buildScripts = {enable = true}},
-                        procMacro = {enable = true}
-                    }
-                },
-                capabilities = capabilities
-            })
             for _, lsp in ipairs(servers) do
                 lspconfig[lsp].setup({
                     capabilities = capabilities
