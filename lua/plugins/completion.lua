@@ -77,6 +77,7 @@ return {
                         keyword_length = 3
                     },
                     {name = "spell"},
+                    {name = "creates"}
                 }),
                 -- 格式化补全菜单
                 formatting = {
