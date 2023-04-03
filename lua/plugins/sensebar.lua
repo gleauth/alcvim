@@ -5,8 +5,8 @@ return {
         version = "*",
         lazy = true,
         ft = {
-            "c","cpp","java","rust","javascript","typescript","json","css",
-            "html","markdown","vim","yaml","toml","python","lua","sh","xml","cmake"
+            "c","cpp","java","rust","javascript","typescript","python","lua",
+            "json","css","html","markdown","vim","yaml","toml","sh","xml","cmake"
         },
         keys = {
             {"<leader>be","<cmd>Barbecue<CR>",desc = "Eject Barbecue Menu"},
