@@ -76,7 +76,6 @@ return {
                         name = "rg",
                         keyword_length = 3
                     },
-                    {name = "orgmode"},
                     {name = "spell"},
                 }),
                 -- 格式化补全菜单
