@@ -64,6 +64,9 @@ return {
             })
             lspconfig["yamlls"].setup({
                 settings = {
+                    redhat = {
+                        telemetry = {enabled = true}
+                    },
                     yaml = {
                         schemas = require("schemastore").yaml.schemas()
                     }
