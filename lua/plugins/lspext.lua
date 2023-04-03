@@ -30,7 +30,7 @@ return {
             {"<leader>ca","<cmd>CodeActionMenu<CR>",desc = "Show Code Action Menu"}
         }
     },
-    -- 带有即时视觉反馈的重命名
+    -- 基于LSP带有即时视觉反馈的重命名
     {
         "smjonas/inc-rename.nvim",
         lazy = true,
@@ -44,7 +44,7 @@ return {
             })
         end
     },
-    -- LSP效果增强
+    -- 增强Lspconfig插件的效果
     {
         "glepnir/lspsaga.nvim",
         lazy = true,
