@@ -44,12 +44,14 @@ return {
         lazy = true,
         ft = "rust",
         config = function ()
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local opts = {
                 server = {
                     diagnostics = {enable = true},
                     imports = {granularity = {group = "module"},prefix = "self"},
                     cargo = {buildScripts = {enable = true}},
                     procMacro = {enable = true},
+                    capabilities = capabilities,
                     on_attach = function (_,bufnr)
                         vim.keymap.set("n", "<leader>rh", require("rust-tools").hover_actions.hover_actions, { buffer = bufnr })
                         vim.keymap.set("n", "<Leader>ra", require("rust-tools").code_action_group.code_action_group, { buffer = bufnr })
