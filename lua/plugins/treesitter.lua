@@ -28,7 +28,7 @@ return {
                 -- 安装高亮支持文件
                 ensure_installed = {
                     "c","cpp","python","rust","java","cmake","lua","vim","bash","fish","vue","yaml","toml",
-                    "markdown","markdown_inline","regex","json","javascript","typescript","css","html"
+                    "markdown","markdown_inline","regex","json","javascript","typescript","css","html","norg"
                 },
                 -- 忽略安装
                 ignore_install = {},
