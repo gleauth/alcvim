@@ -37,6 +37,7 @@ return {
         "Saecki/crates.nvim",
         lazy = true,
         event = {"BufRead Cargo.toml"},
+        dependencies = {"plenary.nvim"},
         opts = {}
     },
     {
