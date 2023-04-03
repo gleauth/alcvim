@@ -8,6 +8,8 @@ return {
             {"<leader>cmr","<cmd>CMakeRun<CR>",desc = "Run CMake Project"},
             {"<leader>cmd","<cmd>CMakeDebug<CR>",desc = "Debug CMake Project"},
             {"<leader>cmk","<cmd>CMakeSelectKit<CR>",desc = "Select Custom Kit"},
+            {"<leader>cmo","<cmd>CMakeOpen<CR>",desc = "Open CMake Console"},
+            {"<leader>cmc","<cmd>CmakeClose<CR>",desc = "Close CMake Console"},
             {"<leader>cms","<cmd>CMakeStop<CR>",desc = "Stop CMake"}
         },
         opts = {
