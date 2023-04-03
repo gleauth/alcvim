@@ -48,6 +48,34 @@ return {
             require("leap").add_default_mappings(true)
         end
     },
+    -- 文本移动
+    {
+        "echasnovski/mini.move",
+        version = false,
+        lazy = true,
+        keys = {
+            {"<M-E>",mode = {"n","v"},desc = "Left Move"},
+            {"<M-R>",mode = {"n","v"},desc = "Right Move"},
+            {"<M-j>",mode = {"n","v"},desc = "Down Move"},
+            {"<M-k>",mode = {"n","v"},desc = "Up Move"}
+        },
+        config = function ()
+            require("mini.move").setup({
+                mappings = {
+                    -- Visual
+                    left = "<M-E>",
+                    right = "<M-R>",
+                    down = "<M-j>",
+                    up = "<M-k>",
+                    -- Nomal
+                    line_left = "<M-E>",
+                    line_right = "<M-R>",
+                    line_down = "<M-j>",
+                    line_up = "<M-k>",
+                }
+            })
+        end
+    },
     -- 文本字符替换
     {
         "nvim-pack/nvim-spectre",
