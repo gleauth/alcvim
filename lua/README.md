@@ -4,8 +4,6 @@
 
 - core 存放基础设置和按键绑定
 
-- indent 存放不同类型缩文件进设置
-
 - debugger 存放debug配置
 
 - plugins 插件安装及其配置
