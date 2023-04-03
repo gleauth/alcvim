@@ -21,5 +21,12 @@ return {
                 {key = "C",action = "clear_cell"}
             }
         }
+    },
+    -- 类似于hacker
+    {
+        "letieu/hacker.nvim",
+        lazy = true,
+        cmd = {"Hack","HackFollow"},
+        opts = {}
     }
 }
