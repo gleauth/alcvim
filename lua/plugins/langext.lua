@@ -38,7 +38,19 @@ return {
         lazy = true,
         event = {"BufRead Cargo.toml"},
         dependencies = {"plenary.nvim"},
-        opts = {}
+        opts = {
+            popup = {
+                border = "rounded",
+            }
+        },
+        keys = {
+            {"<leader>ctt","<cmd>lua require('crates').toggle()<CR>",desc = "Toggle Crates"},
+            {"<leader>ctr","<cmd>lua require('crates').reload()<CR>",desc = "Reload Crates"},
+            {"<leader>ctv","<cmd>lua require('crates').show_versions_popup()<CR>",desc = "Show Popup Versions"},
+            {"<leader>ctu","<cmd>lua require('crates').update_crates()<CR>",desc = "Update Crates"},
+            {"<leader>cta","<cmd>lua require('crates').update_all_crates()<CR>",desc = "Update All Crates"},
+            {"<leader>ctd","<cmd>lua require('crates').open_documention()<CR>",desc = "Open Crates Documention"}
+        }
     },
     {
         "simrat39/rust-tools.nvim",
