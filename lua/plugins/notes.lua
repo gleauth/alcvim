@@ -41,5 +41,18 @@ return {
             {"<leader>fm","<cmd>FeMaco<CR>",desc="调用窗口编辑代码块"}
         },
         opts = {}
+    },
+    -- 处理文本、markdown
+    {
+        "renerocksai/telekasten.nvim",
+        lazy = true,
+        cmd = "Telekasten",
+        keys = {
+            {"<leader>tl",":Telekasten",desc = "Telekasten commands"}
+        },
+        dependencies = {"telescope.nvim"},
+        opts = {
+            home = vim.fn.expand("~/Notes/zettelkasten")
+        }
     }
 }
