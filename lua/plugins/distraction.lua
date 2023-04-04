@@ -28,5 +28,11 @@ return {
         lazy = true,
         cmd = {"Hack","HackFollow"},
         opts = {}
+    },
+    -- 执行美观的元胞自动机动画
+    {
+        "Eandrju/cellular-automaton.nvim",
+        lazy = true,
+        cmd = "CellularAutomaton"
     }
 }
