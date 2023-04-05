@@ -60,6 +60,7 @@ vim.o.termguicolors   = true
 --    vim.o.termguicolors = true
 --end
 -- 设置缩进
+vim.o.breakindent     = true
 vim.o.autoindent      = true
 vim.o.tabstop         = 4
 vim.o.shiftwidth      = 4
