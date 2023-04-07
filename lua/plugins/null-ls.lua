@@ -33,7 +33,6 @@ return {
                 -- Diagnostics
                 diagnostics.cmake_lint, --cmake
                 diagnostics.eslint_d, --javascript,javascriptact,typescript,typescriptact,vue
-                diagnostics.tsc, -- javascript,typescript
                 diagnostics.luacheck, --lua
                 diagnostics.markdownlint, --markdown
                 diagnostics.ruff, --python
