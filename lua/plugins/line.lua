@@ -8,13 +8,9 @@ return {
         dependencies = {"nvim-web-devicons"},
         opts = {
             options = {
-                -- 为每个buffer都配置一个序数
                 numbers = "ordinal",
-                -- 使用内置 LSP 进行诊断
                 diagnostics = "nvim_lsp",
-                -- 分割符样式
                 separator_style = "thin",
-                -- 显示LSP报错图标
                 diagnostics_indicator = function(count, level, diagnostics_dict, context)
                     local s = " "
                     for e, n in pairs(diagnostics_dict) do
@@ -23,12 +19,12 @@ return {
                     end
                     return s
                 end,
-                offset = {
+                offsets = {
                     {
                         filetype = "neo-tree",
                         text = "Neo-tree",
                         highlight = "Directory",
-                        "text_align",
+                        text_align = "left",
                     }
                 }
             }
