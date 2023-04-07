@@ -10,10 +10,14 @@ return {
                 lazy = true,
                 cmd = {"NullLsInstall","NullLsUninstall"},
                 dependencies = {"mason.nvim"},
+                -- zsh,fish,tidy,stylelint,xq,eslint,taplo需要自行安装
+                -- 缘由：
+                -- zsh,fish,tidy,stylelint,xq,eslint:mason没有这些包
+                -- taplo:taplo作为lsp语言服务器，已经安装过了
                 config =function ()
                     require("mason-null-ls").setup({
                         ensure_installed = {
-                            "cmake_format","eslint_d","luacheck","markdownlint","ruff","shellcheck",
+                            "cmake_format","luacheck","markdownlint","ruff","shellcheck",
                             "jsonlint","yamllint","vint","cspell",
                             "prettier","stylua","yapf","shellharden","beautysh","jq"
                         },
@@ -28,11 +32,10 @@ return {
             local diagnostics = null_ls.builtins.diagnostics
             local formatting = null_ls.builtins.formatting
 
-            -- tsc,zsh,fish,tidy,stylelint,xq,taplo需要自行安装
             local sources = {
                 -- Diagnostics
                 diagnostics.cmake_lint, --cmake
-                diagnostics.eslint_d, --javascript,javascriptact,typescript,typescriptact,vue
+                diagnostics.eslint, --javascript,javascriptact,typescript,typescriptact,vue
                 diagnostics.luacheck, --lua
                 diagnostics.markdownlint, --markdown
                 diagnostics.ruff, --python

@@ -99,6 +99,11 @@ return {
             winopts = {
                 hl = {
                     border = "FloatBorder",
+                },
+                preview = {
+                    winopts = {
+                        relativenumber = true,
+                    }
                 }
             }
         }

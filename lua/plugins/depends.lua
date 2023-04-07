@@ -50,6 +50,7 @@ return {
     -- 管理lsp,dap,diagnostics,formatting服务的安装
     {
         "williamboman/mason.nvim",
+        build = ":MasonUpdate",
         lazy = true,
         cmd = {"Mason","MasonInstall","MasonUninstall","MasonLog","MasonUpdate"},
         keys = {

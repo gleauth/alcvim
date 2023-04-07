@@ -69,7 +69,7 @@ return {
             {"<leader>lgl","<cmd>Lspsaga show_line_diagnostics<CR>",desc = "Show Line Diagnotics"},
             {"<leader>lgo","<cmd>Lspsaga outline<CR>",desc = "Lspsaga Toggle Outline"},
             {"<Leader>lgi","<cmd>Lspsaga incoming_calls<CR>",desc = "Call Incoming"},
-            {"<Leader>lgt", "<cmd>Lspsaga outgoing_calls<CR>",desc = "Call Outgoing"},
+            {"<Leader>lgt","<cmd>Lspsaga outgoing_calls<CR>",desc = "Call Outgoing"},
             {"<leader>lgm","<cmd>Lspsaga term_toggle<CR>",desc = "Lspsaga Float Terminal"},
             {"<leader>lgn","<cmd>Lspsaga lsp_finder<CR>",desc = "Search Finder Definition,<C-t> BackWard"}
         },
