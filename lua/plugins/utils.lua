@@ -138,12 +138,6 @@ return {
         },
         opts = {}
     },
-    -- Vim中文文档
-    {
-        "yianwillis/vimcdoc",
-        lazy = true,
-        event = "BufEnter"
-    },
     -- 弹出按键绑定和输入命令窗口
     {
         "folke/which-key.nvim",
