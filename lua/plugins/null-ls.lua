@@ -10,16 +10,15 @@ return {
                 lazy = true,
                 cmd = {"NullLsInstall","NullLsUninstall"},
                 dependencies = {"mason.nvim"},
-                -- zsh,fish,tidy,stylelint,xq,eslint,taplo需要自行安装
+                -- zsh,fish,tidy,stylelint,xq,eslint需要自行安装
                 -- 缘由：
                 -- zsh,fish,tidy,stylelint,xq,eslint:mason没有这些包
-                -- taplo:taplo作为lsp语言服务器，已经安装过了
                 config =function ()
                     require("mason-null-ls").setup({
                         ensure_installed = {
                             "cmake_format","luacheck","markdownlint","ruff","shellcheck",
                             "jsonlint","yamllint","vint","cspell",
-                            "prettier","stylua","yapf","shellharden","beautysh","jq"
+                            "prettier","stylua","yapf","beautysh","jq"
                         },
                         automatic_installation = false,
                         automatic_setup = true
@@ -56,18 +55,15 @@ return {
                 -- Formatting
                 formatting.cmake_format, --cmake
                 formatting.prettier.with({ -- javascript,typescript,css,html,markdown,yaml,vue,jsx
-                    disabled_filetypes = {"json"}
+                    disabled_filetypes = {"json"},
+                    extra_filetypes = {"toml"}
                 }),
                 formatting.stylua, --lua,luau
                 formatting.yapf, --python
-                formatting.shellharden, --sh,bash
                 formatting.fish_indent, --fish
-                formatting.beautysh.with({ --zsh
-                    disabled_filetypes = {"sh","bash"}
-                }),
+                formatting.beautysh, -- zsh,sh,bash
                 formatting.xq, --xml
                 formatting.jq, --json
-                formatting.taplo, --toml
             }
             null_ls.setup({
                 sources = sources,
