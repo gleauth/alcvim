@@ -10,13 +10,13 @@ return {
                 lazy = true,
                 cmd = {"NullLsInstall","NullLsUninstall"},
                 dependencies = {"mason.nvim"},
-                -- zsh,fish,tidy,stylelint,xq,eslint需要自行安装
+                -- zsh,fish,tidy,xq,eslint需要自行安装
                 -- 缘由：
-                -- zsh,fish,tidy,stylelint,xq,eslint:mason没有这些包
+                -- zsh,fish,tidy,xq,eslint:mason没有这些包
                 config =function ()
                     require("mason-null-ls").setup({
                         ensure_installed = {
-                            "cmake_format","luacheck","markdownlint","ruff","shellcheck",
+                            "cmake_format","luacheck","markdownlint","ruff","shellcheck","stylelint",
                             "jsonlint","yamllint","vint","cspell",
                             "prettier","stylua","yapf","beautysh","jq"
                         },
