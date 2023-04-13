@@ -7,26 +7,26 @@ return {
     --         vim.cmd[[colorscheme zephyr]]
     --     end
     -- },
-    {
-        "rmehri01/onenord.nvim",
-        priority = 1000,
-        config = function ()
-            require("onenord").setup({
-                theme = "dark",
-                fade_nc = true,
-                styles = {
-                    comments = "italic",
-                    strings = "bold",
-                    keywords = "bold",
-                    functions = "bold",
-                    variables = "bold",
-                },
-                inverse = {
-                    match_paren = true,
-                }
-            })
-        end
-    }
+    -- {
+    --     "rmehri01/onenord.nvim",
+    --     priority = 1000,
+    --     config = function ()
+    --         require("onenord").setup({
+    --             theme = "dark",
+    --             fade_nc = true,
+    --             styles = {
+    --                 comments = "italic",
+    --                 strings = "bold",
+    --                 keywords = "bold",
+    --                 functions = "bold",
+    --                 variables = "bold",
+    --             },
+    --             inverse = {
+    --                 match_paren = true,
+    --             }
+    --         })
+    --     end
+    -- },
     -- {
     --     "navarasu/onedark.nvim",
     --     priority = 1000,
@@ -43,29 +43,17 @@ return {
     --         require("onedark").load()
     --     end
     -- },
-    -- {
-    --     "rebelot/kanagawa.nvim",
-    --     priority = 1000,
-    --     config = function ()
-    --         require("kanagawa").setup({
-    --             functionStyle = {bold = true},
-    --             keywordStyle = {bold = true,italic = false},
-    --             statementStyle = {bold = true,italic = true},
-    --             dimInactive = true,
-    --             colors = {
-    --                 palette = {},
-    --                 theme = {
-    --                     wave = {
-    --                         ui = {
-    --                             float = {
-    --                                 bg = "none",
-    --                             }
-    --                         }
-    --                     }
-    --                 }
-    --             }
-    --         })
-    --         require("kanagawa").load()
-    --     end
-    -- }
+    {
+        "rebelot/kanagawa.nvim",
+        priority = 1000,
+        config = function ()
+            require("kanagawa").setup({
+                functionStyle = {bold = true},
+                keywordStyle = {bold = true,italic = false},
+                statementStyle = {bold = true,italic = true},
+                dimInactive = true,
+            })
+            require("kanagawa").load()
+        end
+    }
 }

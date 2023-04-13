@@ -3,7 +3,7 @@ local settings = {
         path = vim.fn.stdpath("data") .. "/local-plugin",
     },
     install = {
-        colorscheme = {"onenord"},
+        colorscheme = {"kanagawa"},
     },
     ui = {
         border = "rounded",
