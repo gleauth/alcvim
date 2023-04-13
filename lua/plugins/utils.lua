@@ -221,5 +221,12 @@ return {
         opts = {
             quit = false
         }
+    },
+    -- 改进了正则表达式
+    {
+        "chrisgrieser/nvim-alt-substitute",
+        lazy = true,
+        event = "CmdlineEnter",
+        opts = {}
     }
 }
