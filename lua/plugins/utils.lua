@@ -120,10 +120,10 @@ return {
             {"ge",mode = {"n","o","x"},desc = "Spider-ge"}
         },
         config = function ()
-            vim.keymap.set({"n", "o", "x"}, "w", function() require("spider").motion("w") end)
-            vim.keymap.set({"n", "o", "x"}, "e", function() require("spider").motion("e") end)
-            vim.keymap.set({"n", "o", "x"}, "b", function() require("spider").motion("b") end)
-            vim.keymap.set({"n", "o", "x"}, "ge", function() require("spider").motion("ge") end)
+            vim.keymap.set({"n","o","x"},"w", function() require("spider").motion("w") end)
+            vim.keymap.set({"n","o","x"},"e", function() require("spider").motion("e") end)
+            vim.keymap.set({"n","o","x"},"b", function() require("spider").motion("b") end)
+            vim.keymap.set({"n","o","x"},"ge", function() require("spider").motion("ge") end)
         end
     },
     -- 预览寄存器内容
@@ -226,7 +226,16 @@ return {
     {
         "chrisgrieser/nvim-alt-substitute",
         lazy = true,
+        keys = {
+            {"<leader>sg",mode = {"n","x"},desc = "󱗘 :AltSubstitute"},
+            {"<leader>sa",mode = {"n","x"},desc = "󱗘 :AltSubstitute word under cursor",expr = true}
+        },
         event = "CmdlineEnter",
-        opts = {}
+        config = function ()
+            vim.keymap.set({"n","x"},"<leader>sg",[[:S ///g<Left><Left><Left>]])
+            vim.keymap.set({"n","x"},"<leader>sa",function()
+	            return ":S /" .. vim.fn.expand("<cword>") .. "//g<Left><Left>"
+            end)
+        end
     }
 }
