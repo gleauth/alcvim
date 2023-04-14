@@ -5,7 +5,7 @@ return {
         version = "*",
         lazy = true,
         ft = {
-            "c","cpp","java","rust","javascript","typescript","python","lua",
+            "c","cpp","java","javascript","typescript","python","lua",
             "json","css","html","markdown","vim","yaml","toml","sh","xml","cmake"
         },
         keys = {

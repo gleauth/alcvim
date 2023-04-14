@@ -20,15 +20,16 @@ return {
                 lazy = true,
                 cmd = {"LspInstall","LspUninstall"},
                 dependencies = {"mason.nvim"},
-                -- 不使用mason安装的：tsserver,clangd
+                -- 不使用mason安装的：tsserver,clangd,taplo,neocmake
                 -- 缘由：
                 -- tsserver:无法使用tsc,所以使用包管理器安装
                 -- clangd:存在clang-tools-extra包，直接安装比较好
+                -- taplo,neocmake,未安装cargo
                 opts = {
                     ensure_installed = {
                         "jdtls",
-                        "lua_ls","jsonls","yamlls","rust_analyzer",
-                        "pyright","neocmake","vimls","bashls","marksman","lemminx","taplo",
+                        "lua_ls","jsonls","yamlls",
+                        "pyright","vimls","bashls","marksman","lemminx",
                         "cssls","html","cssls","vuels"
                     },
                     automatic_installation = false

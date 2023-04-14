@@ -28,4 +28,3 @@ dap.configurations.cpp = {
 }
 -- 设置其它语言使用此配置
 dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
