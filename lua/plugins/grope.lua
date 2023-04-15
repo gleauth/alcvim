@@ -20,11 +20,11 @@ return {
                 defaults = {
                     mappings = {
                         i = {
-                            ["<c-H>"] = "which_key",
-                            ["<c-T>"] = trouble.open_with_trouble,
+                            ["<C-H>"] = "which_key",
+                            ["<C-T>"] = trouble.open_with_trouble,
                         },
                         n = {
-                            ["<c-T>"] = trouble.open_with_trouble
+                            ["<C-T>"] = trouble.open_with_trouble
                         },
                     }
                 },

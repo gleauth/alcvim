@@ -64,7 +64,7 @@ return {
             {"]t",mode = "n",desc = "Todo Jump Next"}
         },
         ft = {"c","cpp","lua","python","java","javascript","typescript","yaml","vim","toml",
-            "sh","rust","json","css","html","xml","markdown","cmake"},
+            "sh","json","css","html","xml","markdown","cmake"},
         dependencies = {"plenary.nvim"},
         config = function ()
             require("todo-comments").setup({
@@ -73,10 +73,10 @@ return {
                     FIX =  {icon = " ", color = "#DC2626", alt = {"FIXME", "BUG", "FIXIT", "ISSUE", "!"}},
                     TODO = {icon = " ", color = "#10B981"},
                     HACK = {icon = " ", color = "#7C3AED"},
-                    WARN = {icon = " ", color = "#FBBF24", alt = {"WARNING", "XXX"}},
-                    PERF = {icon = " ", color = "#FC9868", alt = {"OPTIM", "PERFORMANCE", "OPTIMIZE"}},
+                    WARN = {icon = " ", color = "#FBBF24", alt = {"WARNING","XXX"}},
+                    PERF = {icon = " ", color = "#FC9868", alt = {"OPTIM","PERFORMANCE","OPTIMIZE"}},
                     NOTE = {icon = " ", color = "#2563EB", alt = {"INFO"}},
-                    TEST = {icon = "⏲ ", color = "#FF00FF", alt = { "TESTING", "PASSED", "FAILED" }}
+                    TEST = {icon = "⏲ ", color = "#FF00FF", alt = {"TESTING","PASSED","FAILED" }}
                 }
             })
             vim.keymap.set("n","[t",function() require("todo-comments").jump_prev() end)
