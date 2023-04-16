@@ -45,21 +45,18 @@ return {
         cmd = {"TodoTrouble","TodoTelescope","TodoQuickFix","TodoLocList"},
         keys={
             -- 查找TODO标签
-            {"<leader>tdt","<cmd>TodoTelescope theme=ivy<CR>",desc = "Find TODO Tag"},
+            {"<leader>tdt","<cmd>TodoTelescope theme=ivy<CR>",desc = "Find ToDo Tag"},
             -- 筛选关键词
-            {"<leader>tdg",":TodoTelescope keywords=",desc = "screen keyswords"},
+            {"<leader>tdg",":TodoTelescope keywords=",desc = "Screen keyswords"},
             -- 指定搜索目录
             {"<leader>tdd",":TodoTrouble cwd=",desc = "Search Specify Directory"},
             -- 使用快速修复列表显示项目中的所有代办事项
             {"<leader>tdq","<cmd>TodoQuickFix<CR>",desc = "Use QuickFix Show Todo Projects"},
             -- 使用位置列表显示项目中的所有代办事项
             {"<leader>tdl","<cmd>TodoLocList<CR>",desc = "Use Localist Show Todo Projects"},
-            -- TODO标签跳转
-            {"[t",mode = "n",desc = "Todo Jump Prev"},
-            {"]t",mode = "n",desc = "Todo Jump Next"}
         },
         ft = {"c","cpp","lua","python","java","javascript","typescript","yaml","vim","toml",
-            "sh","json","css","html","xml","markdown","cmake"},
+            "sh","json","css","html","xml","cmake"},
         dependencies = {"plenary.nvim"},
         config = function ()
             require("todo-comments").setup({
@@ -74,8 +71,9 @@ return {
                     TEST = {icon = "⏲ ", color = "#FF00FF", alt = {"TESTING","PASSED","FAILED" }}
                 }
             })
-            vim.keymap.set("n","[t",function() require("todo-comments").jump_prev() end)
-            vim.keymap.set("n","]t",function() require("todo-comments").jump_next() end)
+            -- TODO标签跳转
+            vim.keymap.set("n","[t",function() require("todo-comments").jump_prev() end,{desc = "Todo Jump Prev"})
+            vim.keymap.set("n","]t",function() require("todo-comments").jump_next() end,{desc = "Todo Jump Next"})
         end
     },
     -- 注释生成器

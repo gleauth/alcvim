@@ -237,5 +237,19 @@ return {
 	            return ":S /" .. vim.fn.expand("<cword>") .. "//g<Left><Left>"
             end)
         end
+    },
+    -- 右侧小地图
+    {
+        "gorbit99/codewindow.nvim",
+        lazy = true,
+        keys = {
+            {"<leader>mm",mode = {"n"},desc = "Toggle minimap"}
+        },
+        config = function ()
+            require("codewindow").setup({
+                window_border = "rounded",
+            })
+            require("codewindow").apply_default_keybinds()
+        end
     }
 }
