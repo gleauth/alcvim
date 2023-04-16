@@ -106,8 +106,7 @@ return {
         "kevinhwang91/rnvimr",
         lazy = true,
         keys = {
-            {"<leader>rv","<cmd>RnvimrToggle<CR>",desc="Swith Ranger in Float Window"},
-            {"<leader>rs","<cmd>RnvimrResize<CR>",desc="Cycle Preinstall Layout"}
+            {"<leader>rv","<cmd>RnvimrToggle<CR>",desc="Swith Ranger in Float Window"}
         }
     },
     -- 屏保

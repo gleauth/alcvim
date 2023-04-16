@@ -6,21 +6,21 @@ return {
         lazy = true,
         keys = {
             {"gcc",mode = {"n"},desc = "line comment"},
-            {"gCC",mode = {"n"},desc = "line block comment"},
+            {"gbc",mode = {"n"},desc = "block comment"},
             {"gcO",mode = {"n"},desc = "prev line comment"},
             {"gco",mode = {"n"},desc = "next line comment"},
             {"gcA",mode = {"n"},desc = "tail line comment"},
-            {"gc",mode = {"v"},desc = "visual line comment"},
-            {"gb",mode = {"v"},desc = "visual block comment"}
+            {"gc",mode = {"v","n"},desc = "visual and normal line comment"},
+            {"gb",mode = {"v","n"},desc = "visual and normal block comment"}
         },
-        config = function ()
-            local opts = {
+        config = function()
+            require("Comment").setup({
                 -- Normal模式下注释命令
                 toggler = {
                     line = "gcc",
-                    block = "gCC",
+                    block = "gbc",
                 },
-                -- Visual模式下注释命令
+                -- Visual和normal模式下注释命令
                 opleader = {
                     line = "gc",
                     block = "gb",
@@ -34,13 +34,8 @@ return {
                     -- 尾部注释
                     eol = "gcA",
                 },
-                mappings = {
-                    basic = true,
-                    extra = true,
-                },
                 pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-            }
-            require("Comment").setup(opts)
+            })
         end
     },
     -- TODO注释样式
