@@ -41,17 +41,13 @@ return {
                     -- 使用treesitter高亮而不是neovim内置的高亮
                     additional_vim_regex_highlighting = false,
                 },
-                -- 范围选择
+                -- 增量选择
                 incremental_selection = {
                     enable = true,
                     keymaps = {
-                        -- 初始化选择
                         init_selection = "gnn",
-                        -- 递增
                         node_incremental = "grn",
-                        -- 递减
                         node_decremental = "grc",
-                        -- 选择一个范围
                         scope_incremental = "grm"
                     }
                 },
