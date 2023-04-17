@@ -79,10 +79,10 @@ return {
                     capabilities = capabilities
                 })
             end
-            vim.keymap.set("n",'<leader>lf', vim.diagnostic.open_float)
-            vim.keymap.set("n","<leader>lp", vim.diagnostic.goto_prev)
-            vim.keymap.set("n","<leader>ln", vim.diagnostic.goto_next)
-            vim.keymap.set("n",'<leader>lq', vim.diagnostic.setloclist)
+            vim.keymap.set("n",'<leader>lf', vim.diagnostic.open_float,{desc = "Open Float In Vim Diagnostic"})
+            vim.keymap.set("n","<leader>lp", vim.diagnostic.goto_prev,{desc = "Goto Prev In Vim Diagnostic"})
+            vim.keymap.set("n","<leader>ln", vim.diagnostic.goto_next,{desc = "Goto Next In Vim Diagnostic"})
+            vim.keymap.set("n",'<leader>lq', vim.diagnostic.setloclist,{desc = "Setloclist In Vim Diagnostic"})
             vim.api.nvim_create_autocmd("LspAttach",{
                 group = vim.api.nvim_create_augroup("UserLspConifg",{}),
                 callback = function(ev)
