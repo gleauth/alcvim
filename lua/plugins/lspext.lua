@@ -55,7 +55,7 @@ return {
             {"[e","<cmd>Lspsaga diagnostic_jump_next<CR>",desc = "Diagnotics Jump Next"},
             {"]E",mode = {"n"},desc = "Goto Prev Diagnotics Serverity ERROR"},
             {"[E",mode = {"n"},desc = "Goto Next Diagnotics Serverity ERROR"},
-            {"<M-A>",mode = {"n","v"},desc = "Lspsaga Show Code Action"},
+            {"<leader>lga","<cmd>Lspsaga code_action<CR>",desc = "Lspsaga Show Code Action"},
             {"<leader>lgb","<cmd>Lspsaga show_buf_diagnostics<CR>",desc = "Show Buffer Diagnotics"},
             {"<leader>lgd","<cmd>Lspsaga show_cursor_diagnostics<CR>",desc = "Show Cursor Local Diagnotics"},
             {"<leader>lgr","<cmd>Lspsaga rename<CR>",desc = "Lspsaga Rename"},
@@ -83,7 +83,6 @@ return {
                     border = "rounded"
                 }
             })
-            vim.keymap.set({"n","v"},"<M-A>","<cmd>Lspsaga code_action<CR>")
             -- 带过滤器的诊断跳转，如之跳转到错误处
             vim.keymap.set("n", "[E", function()
                 require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
