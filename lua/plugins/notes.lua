@@ -38,11 +38,11 @@ return {
         "AckslD/nvim-FeMaco.lua",
         lazy = true,
         keys = {
-            {"<leader>fm","<cmd>FeMaco<CR>",desc="调用窗口编辑代码块"}
+            {"<leader>fm","<cmd>FeMaco<CR>",desc="Call new window edit code"}
         },
         opts = {}
     },
-    -- 处理文本、markdown
+    -- 处理文本
     {
         "renerocksai/telekasten.nvim",
         lazy = true,
