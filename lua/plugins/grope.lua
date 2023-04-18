@@ -16,15 +16,15 @@ return {
         },
         config = function()
             local trouble = require("trouble.providers.telescope")
-            require('telescope').setup{
+            require("telescope").setup{
                 defaults = {
                     mappings = {
                         i = {
-                            ["<C-H>"] = "which_key",
-                            ["<C-T>"] = trouble.open_with_trouble,
+                            ["<M-w>"] = "which_key",
+                            ["<M-t>"] = trouble.open_with_trouble,
                         },
                         n = {
-                            ["<C-T>"] = trouble.open_with_trouble
+                            ["<M-t>"] = trouble.open_with_trouble
                         },
                     }
                 },
@@ -36,10 +36,6 @@ return {
                 extensions = {
                     file_browser = {
                         theme = "ivy",
-                        mappings = {
-                            ["i"] = {},
-                            ["n"] = {},
-                        },
                     },
                     ["ui-select"] = {
                         require("telescope.themes").get_dropdown {
