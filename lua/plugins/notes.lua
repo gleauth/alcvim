@@ -9,8 +9,8 @@ return {
         opts = {
             load = {
                 ["core.defaults"] = {},
-                ["core.norg.concealer"] = {},
-                ["core.norg.dirman"] = {
+                ["core.concealer"] = {},
+                ["core.dirman"] = {
                     config = {
                         workspaces = {
                             notes = "~/Notes",
