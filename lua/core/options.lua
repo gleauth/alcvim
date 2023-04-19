@@ -79,5 +79,3 @@ vim.o.showmode        = false
 vim.o.redrawtime      = 10000
 -- 菜单栏语言
 vim.o.langmenu        = "en_US.UTF-8"
--- 在markdown文件中，使用fencend code blocks显示typescript语法高亮
-vim.g.markdown_fenced_languages = {"ts=typescript"}
