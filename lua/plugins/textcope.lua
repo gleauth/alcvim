@@ -171,7 +171,7 @@ return {
     -- 搜索时显示条目
     {
         "kevinhwang91/nvim-hlslens",
-        event = "VeryLazy",
+        lazy = true,
         config = function ()
             require("scrollbar.handlers.search").setup({
                 calm_down = true,

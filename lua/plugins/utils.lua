@@ -45,12 +45,6 @@ return {
     {
         "kevinhwang91/nvim-ufo",
         lazy = true,
-        keys = {
-            {"<leader>zo",mode = "n",desc = "Open All Folds"},
-            {"<leader>zc",mode = "n",desc = "Close All Folds"},
-            {"<leader>zk",mode = "n",desc = "Open Folds ExceptKinds"},
-            {"<leader>zw",mode = "n",desc = "Close Folds With"}
-        },
         init = function ()
             vim.o.foldcolumn = '1'
             vim.o.foldlevel = 99
@@ -91,10 +85,10 @@ return {
                 end,
                 fold_virt_text_handler = handler
             })
-            vim.keymap.set('n', '<leader>zo', require('ufo').openAllFolds)
-            vim.keymap.set('n', '<leader>zc', require('ufo').closeAllFolds)
-            vim.keymap.set('n', '<leader>zk', require('ufo').openFoldsExceptKinds)
-            vim.keymap.set('n', '<leader>zw', require('ufo').closeFoldsWith)
+            vim.keymap.set('n', '<leader>zo', require('ufo').openAllFolds,{desc = "Open All Folds"})
+            vim.keymap.set('n', '<leader>zc', require('ufo').closeAllFolds,{desc = "Close All Folds"})
+            vim.keymap.set('n', '<leader>zk', require('ufo').openFoldsExceptKinds,{desc = "Open Folds ExceptKinds"})
+            vim.keymap.set('n', '<leader>zw', require('ufo').closeFoldsWith,{desc = "Close Folds With"})
         end
     },
     -- 改进了Yank和Put功能
