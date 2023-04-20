@@ -45,13 +45,18 @@ return {
     {
         "kevinhwang91/nvim-ufo",
         lazy = true,
+        keys = {
+            {"<leader>zo",mode = "n",desc = "Open All Folds"},
+            {"<leader>zc",mode = "n",desc = "Close All Folds"},
+            {"<leader>zk",mode = "n",desc = "Open Folds ExceptKinds"},
+            {"<leader>zw",mode = "n",desc = "Close Folds With"}
+        },
         init = function ()
             vim.o.foldcolumn = '1'
             vim.o.foldlevel = 99
             vim.o.foldlevelstart = 99
             vim.o.foldenable = true
         end,
-        event = "LspAttach",
         config = function ()
             -- 自定义折叠文本
             local handler = function(virtText, lnum, endLnum, width, truncate)
@@ -81,12 +86,15 @@ return {
                 return newVirtText
             end
             require('ufo').setup({
+                provider_selector = function (bufnr,filetype,buftype)
+                    return {"treesitter","indent"}
+                end,
                 fold_virt_text_handler = handler
             })
-            vim.keymap.set('n', '<leader>zo', require('ufo').openAllFolds,{desc = "Open All Folds"})
-            vim.keymap.set('n', '<leader>zc', require('ufo').closeAllFolds,{desc = "Close All Folds"})
-            vim.keymap.set('n', '<leader>zk', require('ufo').openFoldsExceptKinds,{desc = "Open Folds Except Kinds"})
-            vim.keymap.set('n', '<leader>zw', require('ufo').closeFoldsWith,{desc = "Close Folds With"})
+            vim.keymap.set('n', '<leader>zo', require('ufo').openAllFolds)
+            vim.keymap.set('n', '<leader>zc', require('ufo').closeAllFolds)
+            vim.keymap.set('n', '<leader>zk', require('ufo').openFoldsExceptKinds)
+            vim.keymap.set('n', '<leader>zw', require('ufo').closeFoldsWith)
         end
     },
     -- 改进了Yank和Put功能
