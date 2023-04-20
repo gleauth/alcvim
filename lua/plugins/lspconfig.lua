@@ -39,7 +39,6 @@ return {
         config = function()
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            capabilities.textDocument.foldingRange = {dynamicRegistration = false,lineFoldingOnly = true} -- nvim-ufo插件配置代码折叠
             capabilities.textDocument.completion.completionItem.snippetSupport = true --jsonls,html,cssls需要的代码片段支持
             local servers = {
                 "clangd","pyright","neocmake","vimls","bashls","marksman","lemminx","taplo",
