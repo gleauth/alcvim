@@ -39,23 +39,24 @@ return {
     {
         "bennypowers/nvim-regexplainer",
         lazy = true,
-        cmd = {
-            "RegexPlainerHide","RegexPlainerToggle","RegexPlainerShow","RegexPlainerYank",
-            "RegexPlainerDebug","RegexPlainerShowPopup","RegexPlainerShowSpilt"
-        },
         keys = {
-            {"<leader>rgt","<cmd>RegexPlainerToggle<CR>",desc = "Toggle Regexplainer"}
+            {"gR",mode = {"n","v"},desc = "Toggle Regexplainer"},
+            {"gS",mode = {"n","v"},desc = "Show Regexplainer"},
+            {"gH",mode = {"n","v"},desc = "Hide Regexplainer"},
+            {"gP",mode = {"n","v"},desc = "Show_split Regexplainer"},
+            {"gU",mode = {"n","v"},desc = "Show_popup Regexplainer"}
         },
         opts = {
             mappings = {
                 toggle = "gR",
                 show = "gS",
                 hide = "gH",
+                show_split = "gP",
                 show_popup = "gU"
             },
             narrative = {
                 separator = function(component)
-                    local sep = '\n';
+                    local sep = '\n'
                     if component.depth > 0 then
                         for _ = 1, component.depth do
                             sep = sep .. '> '
