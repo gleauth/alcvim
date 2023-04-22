@@ -173,8 +173,8 @@ return {
                 padding = { right = 1 },
             }
             ins_left {
-            'filesize',
-            cond = conditions.buffer_not_empty,
+                'filesize',
+                cond = conditions.buffer_not_empty,
             }
             ins_left {
                 'filename',
@@ -215,7 +215,7 @@ return {
                     return msg
                 end,
                 icon = ' LSP:',
-                color = { fg = '#ffffff', gui = 'bold' },
+                color = { fg = colors.green, gui = 'bold' },
             }
             ins_right {
                 'o:encoding',
