@@ -77,5 +77,13 @@ return {
     {
         "neomake/neomake",
         event = "VeryLazy"
+    },
+    -- 简化宏
+    {
+        "ecthelionvi/NeoComposer.nvim",
+        lazy = true,
+        cmd = {"ToggleDelay","EditMacros","ClearNeoComposer"},
+        dependencies = {"sqlite.lua"},
+        opts = {}
     }
 }
