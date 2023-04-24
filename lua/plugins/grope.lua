@@ -12,6 +12,7 @@ return {
             {"nvim-telescope/telescope-file-browser.nvim",lazy = true},
             --在编辑历史中选择文件时提供智能优先级排序(以频率和新近度排序)
             {"nvim-telescope/telescope-frecency.nvim",lazy = true},
+            -- 基础依赖
             {"plenary.nvim"}
         },
         config = function()
