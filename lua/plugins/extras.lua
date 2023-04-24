@@ -111,5 +111,16 @@ return {
             {"<leader>sku","<cmd>UnpinBuffer<CR>",desc = "Cancel Everything Fix Window"}
         },
         opts = {}
+    },
+    -- 标签浏览
+    {
+        "LukasPietzschmann/telescope-tabs",
+        lazy = true,
+        keys = {
+            {"<leader>tst","<cmd>Telescope telescope-tabs list_tabs<CR>",desc = "Browser Tabs"},
+            {"<leader>tsl","<cmd>lua require('telescope-tabs').go_to_previous()<CR>",desc = "Immediately switch to last opened tab"}
+        },
+        dependencies = {"Telescope.nvim"},
+        opts = {}
     }
 }
