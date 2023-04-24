@@ -43,16 +43,16 @@ return {
             {"gR",mode = {"n","v"},desc = "Toggle Regexplainer"},
             {"gS",mode = {"n","v"},desc = "Show Regexplainer"},
             {"gH",mode = {"n","v"},desc = "Hide Regexplainer"},
-            {"gP",mode = {"n","v"},desc = "Show_split Regexplainer"},
-            {"gU",mode = {"n","v"},desc = "Show_popup Regexplainer"}
+            {"gL",mode = {"n","v"},desc = "Show_split Regexplainer"},
+            {"gP",mode = {"n","v"},desc = "Show_popup Regexplainer"}
         },
         opts = {
             mappings = {
                 toggle = "gR",
                 show = "gS",
                 hide = "gH",
-                show_split = "gP",
-                show_popup = "gU"
+                show_split = "gL",
+                show_popup = "gP"
             },
             narrative = {
                 separator = function(component)
