@@ -179,7 +179,7 @@ return {
                 close = "q",
                 cancel = "<Esc>",
                 refresh = "r",
-                jump = {"<leader><S-Tab>", "<leader><Tab>"},
+                jump = {"<Tab>", "<leader><Tab>"},
                 open_split = { "<C-X>" },
                 open_vsplit = { "<C-L>" },
                 open_tab = { "<space>" },
