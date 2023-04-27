@@ -42,6 +42,13 @@ return {
         },
         opts = {}
     },
+    -- 突出显示markdown代码块
+    {
+        "yaocccc/nvim-hl-mdcodeblock.lua",
+        lazy = true,
+        ft = "markdown",
+        opts = {}
+    },
     -- 处理文本
     {
         "renerocksai/telekasten.nvim",
