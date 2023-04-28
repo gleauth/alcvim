@@ -105,6 +105,18 @@ return {
         },
         opts = {}
     },
+    -- 显示函数的引用和定义信息
+    {
+        "VidocqH/lsp-lens.nvim",
+        lazy = true,
+        event = "LspAttach",
+        opts = {
+            include_declaration = true,
+            sections = {
+                definition = true
+            }
+        }
+    },
     -- 代码大纲
     {
         "stevearc/aerial.nvim",
