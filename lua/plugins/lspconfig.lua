@@ -30,7 +30,7 @@ return {
                         "jdtls",
                         "lua_ls","jsonls","yamlls",
                         "pyright","vimls","bashls","marksman","lemminx",
-                        "cssls","html","cssls","vuels"
+                        "cssls","html","cssls","volar"
                     },
                     automatic_installation = false
                 }
