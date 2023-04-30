@@ -42,7 +42,7 @@ return {
             capabilities.textDocument.completion.completionItem.snippetSupport = true --jsonls,html,cssls需要的代码片段支持
             local servers = {
                 "clangd","pyright","neocmake","vimls","bashls","marksman","lemminx","taplo",
-                "tsserver","cssls","html","vuels"
+                "tsserver","cssls","html","volar"
             }
 
             lspconfig["lua_ls"].setup({
