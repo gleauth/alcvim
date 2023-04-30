@@ -41,20 +41,23 @@ return {
                 diagnostics.shellcheck, --sh
                 diagnostics.zsh, --zsh
                 diagnostics.fish, --fish
-                diagnostics.tidy, --html,xml
+                diagnostics.markuplint, --html
+                diagnostics.tidy.with({
+                    disabled_filetypes = {"html"}
+                }), --xml
                 diagnostics.stylelint, -- css
                 diagnostics.jsonlint, --json
                 diagnostics.yamllint, --yaml
                 diagnostics.vint, --vim
                 diagnostics.cspell.with({
                     disabled_filetypes = {
-                        "c","cpp","cmake","javascript","typescript","vue","lua","markdown","python",
+                        "c","cpp","cmake","javascript","typescript","vue","lua","markdown","python","go","toml",
                         "bash","sh","zsh","fish","html","xml","css","json","yaml","yml","vim","java","rust"
                     }
                 }),
                 -- Formatting
                 formatting.cmake_format, --cmake
-                formatting.prettier.with({ -- javascript,typescript,css,html,markdown,yaml,vue,jsx
+                formatting.prettier.with({ -- javascript,typescript,css,html,markdown,yaml,vue,jsx,toml
                     disabled_filetypes = {"json"},
                     extra_filetypes = {"toml"}
                 }),
