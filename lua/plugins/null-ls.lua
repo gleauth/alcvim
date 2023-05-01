@@ -17,7 +17,7 @@ return {
                     require("mason-null-ls").setup({
                         ensure_installed = {
                             "cmake_format","luacheck","markdownlint","ruff","shellcheck","stylelint",
-                            "jsonlint","yamllint","vint","cspell",
+                            "jsonlint","yamllint","vint","cspell","editorconfig_checker",
                             "prettier","stylua","yapf","beautysh","jq"
                         },
                         automatic_installation = false,
@@ -55,6 +55,7 @@ return {
                         "bash","sh","zsh","fish","html","xml","css","json","yaml","yml","vim","java","rust"
                     }
                 }),
+                diagnostics.editorconfig_checker, -- 检测编辑文件
                 -- Formatting
                 formatting.cmake_format, --cmake
                 formatting.prettier.with({ -- javascript,typescript,css,html,markdown,yaml,vue,jsx,toml
