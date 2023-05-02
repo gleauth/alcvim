@@ -1,6 +1,6 @@
 return {
-   -- telescope模糊查找
-   {
+    -- telescope模糊查找
+    {
         "nvim-telescope/telescope.nvim",
         branch="0.1.x",
         lazy = true,
@@ -62,6 +62,7 @@ return {
             require("telescope").load_extension("noice")
             require("telescope").load_extension("harpoon")
             require("telescope").load_extension("yank_history")
+            require("telescope").load_extension("macros")
         end,
         keys = {
             {"<leader>tsw","<cmd>Telescope find_files theme=ivy<CR>",desc = "Find Files"},

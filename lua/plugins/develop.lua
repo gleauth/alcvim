@@ -82,8 +82,12 @@ return {
     {
         "ecthelionvi/NeoComposer.nvim",
         lazy = true,
-        cmd = {"ToggleDelay","EditMacros","ClearNeoComposer"},
         dependencies = {"sqlite.lua"},
-        opts = {}
+        opts = {
+            keymaps = {
+                cycle_next = "<C-N>",
+                cycle_prev = "<C-P>"
+            }
+        }
     }
 }
