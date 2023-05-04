@@ -168,6 +168,17 @@ return {
             vim.keymap.set({"n","x"},"<leader>sr",function() require("ssr").open() end)
         end
     },
+    -- 多个参数替换
+    {
+        "AckslD/muren.nvim",
+        lazy = true,
+        keys = {
+            {"<leader>mt","<cmd>MurenToggle<CR>",desc = "Switch User Face In Muren"},
+            {"<leader>mf","<cmd>MurenFresh<CR>",desc = "Fresh User Face In Muren"},
+            {"<leader>mu","<cmd>MurenUnique<CR>",desc = "Unique Muren"},
+        },
+        opts = {}
+    },
     -- 搜索时显示条目
     {
         "kevinhwang91/nvim-hlslens",
