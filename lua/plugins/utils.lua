@@ -176,7 +176,7 @@ return {
             keys = "<Esc>",
         }
     },
-     -- 平滑滚动
+    -- 平滑滚动
     {
         "karb94/neoscroll.nvim",
         event = "VimEnter",
@@ -236,7 +236,7 @@ return {
         config = function ()
             vim.keymap.set({"n","x"},"<leader>sg",[[:S ///g<Left><Left><Left>]])
             vim.keymap.set({"n","x"},"<leader>sa",function()
-	            return ":S /" .. vim.fn.expand("<cword>") .. "//g<Left><Left>"
+                return ":S /" .. vim.fn.expand("<cword>") .. "//g<Left><Left>"
             end)
         end
     },
