@@ -55,9 +55,9 @@ return {
                         "bash","sh","zsh","fish","html","xml","css","json","yaml","yml","vim","java","rust"
                     }
                 }),
-                diagnostics.editorconfig_checker.with({
+                diagnostics.editorconfig_checker.with({ -- 检测编辑文件
                     disabled_filetypes = {"c","cpp"}
-                }), -- 检测编辑文件
+                }),
                 -- Formatting
                 formatting.cmake_format, --cmake
                 formatting.prettier.with({ -- javascript,typescript,css,html,markdown,yaml,vue,jsx,toml
