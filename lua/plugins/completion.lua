@@ -18,7 +18,7 @@ return {
             })
         end
     },
-     --代码补全插件
+    --代码补全插件
     {
         "hrsh7th/nvim-cmp",  --代码补全
         event = {"InsertEnter","CmdlineEnter"},

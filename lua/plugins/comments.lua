@@ -1,7 +1,7 @@
 -- 注释类插件
 return {
-     -- 快速注释
-     {
+    -- 快速注释
+    {
         "numToStr/Comment.nvim",
         lazy = true,
         keys = {
