@@ -58,23 +58,22 @@ return {
         ft = {"c","cpp","lua","python","java","javascript","typescript","yaml","vim","toml",
             "sh","json","css","html","xml","cmake"},
         dependencies = {"plenary.nvim"},
-        config = function ()
-            require("todo-comments").setup({
-                keywords = {
-                    -- alt:别名
-                    FIX =  {icon = " ", color = "#DC2626", alt = {"FIXME", "BUG", "FIXIT", "ISSUE", "!"}},
-                    TODO = {icon = " ", color = "#10B981"},
-                    HACK = {icon = " ", color = "#7C3AED"},
-                    WARN = {icon = " ", color = "#FBBF24", alt = {"WARNING","XXX"}},
-                    PERF = {icon = " ", color = "#FC9868", alt = {"OPTIM","PERFORMANCE","OPTIMIZE"}},
-                    NOTE = {icon = " ", color = "#2563EB", alt = {"INFO"}},
-                    TEST = {icon = "⏲ ", color = "#FF00FF", alt = {"TESTING","PASSED","FAILED" }}
-                }
-            })
+        init = function ()
             -- TODO标签跳转
             vim.keymap.set("n","[t",function() require("todo-comments").jump_prev() end,{desc = "Todo Jump Prev"})
             vim.keymap.set("n","]t",function() require("todo-comments").jump_next() end,{desc = "Todo Jump Next"})
-        end
+        end,
+        opts = {
+            keywords = {
+                FIX =  {icon = " ", color = "#DC2626", alt = {"FIXME", "BUG", "FIXIT", "ISSUE", "!"}},
+                TODO = {icon = " ", color = "#10B981"},
+                HACK = {icon = " ", color = "#7C3AED"},
+                WARN = {icon = " ", color = "#FBBF24", alt = {"WARNING","XXX"}},
+                PERF = {icon = " ", color = "#FC9868", alt = {"OPTIM","PERFORMANCE","OPTIMIZE"}},
+                NOTE = {icon = " ", color = "#2563EB", alt = {"INFO"}},
+                TEST = {icon = "⏲ ", color = "#FF00FF", alt = {"TESTING","PASSED","FAILED" }}
+            }
+        }
     },
     -- 注释生成器
     {

@@ -77,6 +77,9 @@ return {
             {"nvim-web-devicons"},
             {"nvim-treesitter"}
         },
+        init = function ()
+
+        end,
         config = function ()
             require("lspsaga").setup({
                 ui = {
