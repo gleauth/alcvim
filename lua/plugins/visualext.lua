@@ -114,7 +114,6 @@ return {
             {"<leader>crd","<cmd>ColorizerDetachFromBuffer<CR>",desc = "Detach Buffer HSHighlight"},
             {"<leader>crt","<cmd>ColorizerToggle<CR>",desc = "Toggle Buffer HSHighlight"}
         },
-        event = {"BufReadPost","BufNewFile"},
         opts = {
             filetypes = {
                 '*';

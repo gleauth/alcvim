@@ -77,17 +77,5 @@ return {
     {
         "neomake/neomake",
         event = "VeryLazy"
-    },
-    -- 简化宏
-    {
-        "ecthelionvi/NeoComposer.nvim",
-        lazy = true,
-        dependencies = {"sqlite.lua"},
-        opts = {
-            keymaps = {
-                cycle_next = "<C-N>",
-                cycle_prev = "<C-P>"
-            }
-        }
     }
 }

@@ -50,6 +50,10 @@ return {
             vim.o.foldlevel = 99
             vim.o.foldlevelstart = 99
             vim.o.foldenable = true
+            vim.keymap.set('n', '<leader>zo', require('ufo').openAllFolds,{desc = "Open All Folds"})
+            vim.keymap.set('n', '<leader>zc', require('ufo').closeAllFolds,{desc = "Close All Folds"})
+            vim.keymap.set('n', '<leader>zk', require('ufo').openFoldsExceptKinds,{desc = "Open Folds ExceptKinds"})
+            vim.keymap.set('n', '<leader>zw', require('ufo').closeFoldsWith,{desc = "Close Folds With"})
         end,
         config = function ()
             -- 自定义折叠文本
@@ -85,10 +89,6 @@ return {
                 end,
                 fold_virt_text_handler = handler
             })
-            vim.keymap.set('n', '<leader>zo', require('ufo').openAllFolds,{desc = "Open All Folds"})
-            vim.keymap.set('n', '<leader>zc', require('ufo').closeAllFolds,{desc = "Close All Folds"})
-            vim.keymap.set('n', '<leader>zk', require('ufo').openFoldsExceptKinds,{desc = "Open Folds ExceptKinds"})
-            vim.keymap.set('n', '<leader>zw', require('ufo').closeFoldsWith,{desc = "Close Folds With"})
         end
     },
     -- 改进了Yank和Put功能
@@ -116,16 +116,16 @@ return {
         "chrisgrieser/nvim-spider",
         lazy = true,
         keys = {
-            {"w",mode = {"n","o","x"},desc = "Spider-w"},
-            {"e",mode = {"n","o","x"},desc = "Spider-e"},
-            {"b",mode = {"n","o","x"},desc = "Spider-b"},
-            {"ge",mode = {"n","o","x"},desc = "Spider-ge"}
+            {"w",mode = {"n","o","x"}},
+            {"e",mode = {"n","o","x"}},
+            {"b",mode = {"n","o","x"}},
+            {"ge",mode = {"n","o","x"}}
         },
-        config = function ()
-            vim.keymap.set({"n","o","x"},"w", function() require("spider").motion("w") end)
-            vim.keymap.set({"n","o","x"},"e", function() require("spider").motion("e") end)
-            vim.keymap.set({"n","o","x"},"b", function() require("spider").motion("b") end)
-            vim.keymap.set({"n","o","x"},"ge", function() require("spider").motion("ge") end)
+        init = function ()
+            vim.keymap.set({"n","o","x"},"w","<cmd>lua require('spider').motion('w')<CR>",{desc = "Spider-w"})
+            vim.keymap.set({"n","o","x"},"e","<cmd>lua require('spider').motion('e')<CR>",{desc = "Spider-e"})
+            vim.keymap.set({"n","o","x"},"b","<cmd>lua require('spider').motion('b')<CR>",{desc = "Spider-b"})
+            vim.keymap.set({"n","o","x"},"ge","<cmd>lua require('spider').motion('ge')<CR>",{desc = "Spider-ge"})
         end
     },
     -- 预览寄存器内容
@@ -223,22 +223,6 @@ return {
         opts = {
             quit = false
         }
-    },
-    -- 改进了正则表达式
-    {
-        "chrisgrieser/nvim-alt-substitute",
-        lazy = true,
-        keys = {
-            {"<leader>sg",mode = {"n","x"},desc = "󱗘 :AltSubstitute"},
-            {"<leader>sa",mode = {"n","x"},desc = "󱗘 :AltSubstitute word under cursor",expr = true}
-        },
-        event = "CmdlineEnter",
-        config = function ()
-            vim.keymap.set({"n","x"},"<leader>sg",[[:S ///g<Left><Left><Left>]])
-            vim.keymap.set({"n","x"},"<leader>sa",function()
-                return ":S /" .. vim.fn.expand("<cword>") .. "//g<Left><Left>"
-            end)
-        end
     },
     -- 右侧小地图
     {
