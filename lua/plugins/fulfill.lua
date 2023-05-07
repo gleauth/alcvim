@@ -63,7 +63,6 @@ return {
     {
         "NMAC427/guess-indent.nvim",
         lazy = true,
-        cmd = "GuessIndent",
         keys = {
             {"<leader>gd","<cmd>GuessIndent<CR>",desc = "Guess Indent Check"}
         },
