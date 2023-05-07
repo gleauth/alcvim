@@ -1,4 +1,4 @@
--- 注释类插件
+-- NOTE:注释类插件
 return {
     -- 快速注释
     {
@@ -55,14 +55,11 @@ return {
             -- 使用位置列表显示项目中的所有代办事项
             {"<leader>tdl","<cmd>TodoLocList<CR>",desc = "Use Localist Show Todo Projects"},
         },
-        ft = {"c","cpp","lua","python","java","javascript","typescript","yaml","vim","toml",
-            "sh","json","css","html","xml","cmake"},
-        dependencies = {"plenary.nvim"},
         init = function ()
-            -- TODO标签跳转
             vim.keymap.set("n","[t",function() require("todo-comments").jump_prev() end,{desc = "Todo Jump Prev"})
             vim.keymap.set("n","]t",function() require("todo-comments").jump_next() end,{desc = "Todo Jump Next"})
         end,
+        dependencies = {"plenary.nvim"},
         opts = {
             keywords = {
                 FIX =  {icon = " ", color = "#DC2626", alt = {"FIXME", "BUG", "FIXIT", "ISSUE", "!"}},
