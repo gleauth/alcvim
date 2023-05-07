@@ -3,7 +3,6 @@ return {
     {
         "ThePrimeagen/vim-be-good",
         lazy = true,
-        cmd = "VimBeGood",
         keys = {
             {"<leader>bg","<cmd>VimBeGood<CR>",desc = "Start Vim Be Good"}
         }
@@ -26,13 +25,19 @@ return {
     {
         "letieu/hacker.nvim",
         lazy = true,
-        cmd = {"Hack","HackFollow"},
+        keys = {
+            {"<leader>hk","<cmd>Hack<CR>",desc = "Start Hack Game"},
+            {"<leader>hf","<cmd>HackFollow<CR>",desc = "Use Current Interface Start Hack Game"}
+        },
         opts = {}
     },
     -- 执行美观的元胞自动机动画
     {
         "Eandrju/cellular-automaton.nvim",
         lazy = true,
-        cmd = "CellularAutomaton"
+        keys = {
+            {"<leader>al","<cmd>CellularAutomaton game_of_life<CR>",desc = "Automation life for Cellular"},
+            {"<leader>ar","<cmd>CellularAutomaton make_it_rain<CR>",desc = "Automation rain for Cellular"}
+        }
     }
 }
