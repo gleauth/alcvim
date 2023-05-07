@@ -53,8 +53,6 @@ return {
             -- 诊断跳转，<c-o>跳回
             {"]e","<cmd>Lspsaga diagnostic_jump_prev<CR>",desc = "Diagnotics Jump Prev"},
             {"[e","<cmd>Lspsaga diagnostic_jump_next<CR>",desc = "Diagnotics Jump Next"},
-            {"]E",mode = {"n"},desc = "Goto Prev Diagnotics Serverity ERROR"},
-            {"[E",mode = {"n"},desc = "Goto Next Diagnotics Serverity ERROR"},
             {"<leader>lga","<cmd>Lspsaga code_action<CR>",desc = "Lspsaga Show Code Action"},
             {"<leader>lgb","<cmd>Lspsaga show_buf_diagnostics<CR>",desc = "Show Buffer Diagnotics"},
             {"<leader>lgd","<cmd>Lspsaga show_cursor_diagnostics<CR>",desc = "Show Cursor Local Diagnotics"},
@@ -73,26 +71,25 @@ return {
             {"<leader>lgm","<cmd>Lspsaga term_toggle<CR>",desc = "Lspsaga Float Terminal"},
             {"<leader>lgn","<cmd>Lspsaga lsp_finder<CR>",desc = "Search Finder Definition,<C-t> BackWard"}
         },
+        init = function ()
+            -- 带过滤器的诊断跳转，如之跳转到错误处
+            vim.keymap.set("n", "[E", function()
+                require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+            end,{desc = "Goto Prev Diagnotics Serverity ERROR"})
+            vim.keymap.set("n", "]E", function()
+                require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+            end,{desc = "Goto Next Diagnotics Serverity ERROR"})
+        end,
         dependencies = {
             {"nvim-web-devicons"},
             {"nvim-treesitter"}
         },
-        init = function ()
-
-        end,
         config = function ()
             require("lspsaga").setup({
                 ui = {
                     border = "rounded"
                 }
             })
-            -- 带过滤器的诊断跳转，如之跳转到错误处
-            vim.keymap.set("n", "[E", function()
-                require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-            end)
-            vim.keymap.set("n", "]E", function()
-                require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
-            end)
         end
     },
     -- 预览、导航和编辑LSP位置
