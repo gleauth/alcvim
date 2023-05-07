@@ -44,9 +44,6 @@ return {
             stages = "fade",
             -- 消息框持续时间,默认5000(毫秒)
             timeout = 6000
-        },
-        keys = {
-            {"<leader>ns","<cmd>Notifications<CR>",desc = "Show History Log"}
         }
     },
     --光标行号模式指示器
