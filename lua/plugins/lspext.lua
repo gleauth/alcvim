@@ -124,9 +124,11 @@ return {
     {
         "stevearc/aerial.nvim",
         lazy = true,
-        cmd = {"AerialToggle","AerialOpenAll","AerialCloseAll","AeriaInfo"},
         keys = {
-            {"<leader>ag","<cmd>AerialToggle<CR>",desc = "Toggle Aerial"}
+            {"<leader>ag","<cmd>AerialToggle<CR>",desc = "Toggle Aerial"},
+            {"<leader>ao","<cmd>AerialOpenAll<CR>",desc = "Open All Aerial"},
+            {"<leader>ac","<cmd>AerialCloseAll<CR>",desc = "Close All Aerial"},
+            {"<leader>ai","<cmd>AeriaInfo<CR>",desc = "Show Aerial Info"}
         },
         config = function ()
             require("aerial").setup({
