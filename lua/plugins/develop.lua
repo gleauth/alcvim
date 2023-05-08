@@ -40,11 +40,11 @@ return {
         "bennypowers/nvim-regexplainer",
         lazy = true,
         keys = {
-            {"gR",mode = {"n","v"},desc = "Toggle Regexplainer"},
-            {"gS",mode = {"n","v"},desc = "Show Regexplainer"},
-            {"gH",mode = {"n","v"},desc = "Hide Regexplainer"},
-            {"gL",mode = {"n","v"},desc = "Show_split Regexplainer"},
-            {"gP",mode = {"n","v"},desc = "Show_popup Regexplainer"}
+            {"gR",mode = {"n"},desc = "Toggle Regexplainer"},
+            {"gS",mode = {"n"},desc = "Show Regexplainer"},
+            {"gH",mode = {"n"},desc = "Hide Regexplainer"},
+            {"gL",mode = {"n"},desc = "Show_split Regexplainer"},
+            {"gP",mode = {"n"},desc = "Show_popup Regexplainer"}
         },
         opts = {
             mappings = {
