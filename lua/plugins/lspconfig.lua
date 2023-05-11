@@ -3,6 +3,12 @@ return {
     {
         "neovim/nvim-lspconfig",
         event = {"BufReadPre","BufNewFile"},
+        init = function ()
+            vim.keymap.set("n","<leader>li","<cmd>LspInfo<CR>",{desc = "Show Lspconfig Info"})
+            vim.keymap.set("n","<leader>ls","<cmd>LspStart<CR>",{desc = "Start LspConfig"})
+            vim.keymap.set("n","<leader>lt","<cmd>LspStop<CR>",{desc = "Stop Lspconfig"})
+            vim.keymap.set("n","<leader>lr","<cmd>LspRestart<CR>",{desc = "Restart LspConfig"})
+        end,
         dependencies = {
             -- Neovim中lua API完整签名、帮助和补全
             {
@@ -101,15 +107,11 @@ return {
                     vim.keymap.set('n', '<leader>lcn', vim.lsp.buf.rename,bufopts)
                     vim.keymap.set('n', '<leader>lcc', vim.lsp.buf.code_action,bufopts)
                     vim.keymap.set('n', '<leader>lcr', vim.lsp.buf.references,bufopts)
-                    vim.keymap.set('n', '<leader>lcf', function() vim.lsp.buf.format { async = true } end,bufopts)
+                    vim.keymap.set('n', '<leader>lcf', function()
+                        vim.lsp.buf.format {async = true}
+                    end,bufopts)
                 end
             })
-        end,
-        keys = {
-            {"<leader>li","<cmd>LspInfo<CR>",desc = "Show Lspconfig Info"},
-            {"<leader>ls","<cmd>LspStart<CR>",desc = "Start LspConfig"},
-            {"<leader>lt","<cmd>LspStop<CR>",desc = "Stop Lspconfig"},
-            {"<leader>lr","<cmd>LspRestart<CR>",desc = "Restart LspConfig"}
-        }
+        end
     }
 }

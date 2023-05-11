@@ -4,6 +4,10 @@ return {
         "jose-elias-alvarez/null-ls.nvim",
         lazy = true,
         event = {"BufReadPre","BufNewFile"},
+        init = function ()
+            vim.keymap.set("n","<leader>ni","<cmd>NullLsInfo<CR>",{desc = "Show Null-ls Info"})
+            vim.keymap.set("n","<leader>nl","<cmd>NullLsLog<CR>",{desc = "Show Null-ls Log"})
+        end,
         dependencies = {
             {
                 "jay-babu/mason-null-ls.nvim",
@@ -84,10 +88,6 @@ return {
                 },
                 diagnostics_format = "[#{c}] #{m} (#{s})"
             })
-        end,
-        keys = {
-            {"<leader>ni","<cmd>NullLsInfo<CR>",desc = "Show Null-ls Info"},
-            {"<leader>nl","<cmd>NullLsLog<CR>",desc = "Show Null-ls Log"}
-        }
+        end
     }
 }

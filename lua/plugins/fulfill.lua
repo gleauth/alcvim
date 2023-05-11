@@ -3,10 +3,10 @@ return {
     {
         "Pocco81/auto-save.nvim",
         event = {"InsertLeave","BufWrite"},
-        opts = {},
-        keys = {
-            {"<leader>at","<cmd>ASToggle<CR>",desc = "Toggle Auto Save"}
-        }
+        init = function ()
+            vim.keymap.set("n","<leader>at","<cmd>ASToggle<CR>",{desc = "Toggle Auto Save"})
+        end,
+        opts = {}
     },
     -- 自动恢复光标位置
     {

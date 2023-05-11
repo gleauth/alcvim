@@ -5,6 +5,12 @@ return {
         "akinsho/bufferline.nvim",
         version = "v3.*",
         event = "VeryLazy",
+        init = function ()
+            vim.keymap.set("n","<M-p>","<cmd>BufferLineCyclePrev<CR>",{desc = "Goto Prev Buffer"})
+            vim.keymap.set("n","<M-n>","<cmd>BufferLineCycleNext<CR>",{desc = "Goto Next Buffer"})
+            vim.keymap.set("n","<leader>bl","<cmd>BufferLineCloseLeft<CR>",{desc = "Close Left Buffer"})
+            vim.keymap.set("n","<leader>br","<cmd>BufferLineCloseRight<CR>",{desc = "Close Right Buffer"})
+        end,
         dependencies = {"nvim-web-devicons"},
         opts = {
             options = {
@@ -28,12 +34,6 @@ return {
                     }
                 }
             }
-        },
-        keys = {
-            {"<M-p>","<cmd>BufferLineCyclePrev<CR>",desc = "Goto Prev Buffer"},
-            {"<M-n>","<cmd>BufferLineCycleNext<CR>",desc = "Goto Next Buffer"},
-            {"<leader>bl","<cmd>BufferLineCloseLeft<CR>",desc = "Close Left Buffer"},
-            {"<leader>br","<cmd>BufferLineCloseRight<CR>",desc = "Close Right Buffer"}
         }
     },
     -- status栏插件
