@@ -194,10 +194,12 @@ return {
         "nvim-treesitter/nvim-treesitter-context",
         lazy = true,
         event = {"BufReadPost","BufNewFile"},
+        init = function ()
+            vim.keymap.set("n","[c",function()
+                require("treesitter-context").go_to_context()
+            end,{desc = "Goto Treesitter Context"})
+        end,
         dependencies = {"nvim-treesitter"},
-        opts = {},
-        keys = {
-            {"<leader>tc","<cmd>TSContextToggle<CR>",desc = "Toggle Show Current Buffer Context"}
-        }
+        opts = {}
     }
 }
