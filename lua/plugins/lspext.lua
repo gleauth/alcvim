@@ -92,19 +92,6 @@ return {
             })
         end
     },
-    -- 预览、导航和编辑LSP位置
-    {
-        "DNLHC/glance.nvim",
-        lazy = true,
-        cmd = "Glance",
-        keys = {
-            {"<leader>glr","<cmd>Glance references<CR>",desc = "Show Cursor Word References"},
-            {"<leader>gld","<cmd>Glance definitions<CR>",desc = "Show Cursor Word Definition"},
-            {"<leader>glt","<cmd>Glance type_definitions<CR>",desc = "Show Cursor Word Type Definition"},
-            {"<leader>gli","<cmd>Glance implementations<CR>",desc = "Show Cursor Word Implementation"}
-        },
-        opts = {}
-    },
     -- 显示函数的引用和定义信息
     {
         "VidocqH/lsp-lens.nvim",

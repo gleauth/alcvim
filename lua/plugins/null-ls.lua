@@ -60,7 +60,7 @@ return {
                     }
                 }),
                 diagnostics.editorconfig_checker.with({ -- 检测编辑文件
-                    disabled_filetypes = {"c","cpp"}
+                    disabled_filetypes = {"c","cpp","txt","help","log"}
                 }),
                 -- Formatting
                 formatting.cmake_format, --cmake

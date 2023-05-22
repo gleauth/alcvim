@@ -79,3 +79,10 @@ vim.o.showmode        = false
 vim.o.redrawtime      = 10000
 -- 菜单栏语言
 vim.o.langmenu        = "en_US.UTF-8"
+-- 代码折叠
+vim.wo.foldmethod     = "expr"
+vim.wo.foldexpr       = "nvim_treesitter#foldexpr()"
+vim.wo.foldlevel      = 99
+vim.o.foldcoumn       = "1"
+vim.o.foldlevelstart  = 99
+vim.o.foldenable      = true

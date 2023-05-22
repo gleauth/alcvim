@@ -5,11 +5,6 @@ return {
         "nvim-lua/plenary.nvim",
         lazy = true
     },
-    -- 支持异步
-    {
-        "kevinhwang91/promise-async",
-        lazy = true
-    },
     -- 改进了默认vim.ui界面
     {
         "stevearc/dressing.nvim",
