@@ -55,7 +55,7 @@ return {
                 settings = {
                     lua = {
                         diagnostics = {globals = {"vim"}},
-                        workspace = {checkThirdParty = false},
+                        workspace = {library = vim.api.nvim_get_runtime_file("", true)},
                         telemetry = {enable = false},
                         completion = {callSnippet = "Both"}
                     }
