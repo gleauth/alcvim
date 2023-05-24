@@ -4,10 +4,8 @@ return {
         name = "barbecue",
         version = "*",
         lazy = true,
-        ft = {
-            "c","cpp","java","javascript","typescript","python","lua",
-            "json","css","html","markdown","vim","yaml","toml","sh","xml","cmake"
-        },
+        ft = {"c","cpp","python","java","lua","cmake","xml","markdown","sh","vim",
+            "javascript","typescript","css","html","vue","yaml","toml"},
         keys = {
             {"<leader>be","<cmd>Barbecue<CR>",desc = "Eject Barbecue Menu"},
         },
