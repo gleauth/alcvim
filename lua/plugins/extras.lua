@@ -83,23 +83,6 @@ return {
             disable_legacy_commands =true,
         }
     },
-    -- 窗口选择器
-    {
-        "s1n7ax/nvim-window-picker",
-        version = "v1.*",
-        lazy = true,
-        opts = {
-            autoselect_one = true,
-            include_current = false,
-            filter_rules = {
-                bo = {
-                    filetype = { 'neo-tree', "neo-tree-popup", "notify" },
-                    buftype = { 'terminal', "quickfix" },
-                },
-            },
-            other_win_hl_color = '#e35e4f',
-        }
-    },
     -- 将缓冲区锁定到窗口
     {
         "stevearc/stickybuf.nvim",
@@ -109,6 +92,16 @@ return {
             {"<leader>skt","<cmd>PinBuftype<CR>",desc = "Set Before Buftype Fix In Window"},
             {"<leader>ske","<cmd>PinFiletype<CR>",desc = "Set Before Filetype Fix In Window"},
             {"<leader>sku","<cmd>UnpinBuffer<CR>",desc = "Cancel Everything Fix Window"}
+        },
+        opts = {}
+    },
+    {
+        "folke/edgy.nvim",
+        enabled = false,
+        -- requirement nvim version 0.10.0
+        event = "VeryLazy",
+        keys = {
+            {"<leader>ue",function () require("edgy").select() end,desc = "Edgy Select Window"}
         },
         opts = {}
     }

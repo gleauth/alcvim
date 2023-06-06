@@ -68,7 +68,6 @@ return {
             {"<leader>nr","<cmd>Neotree filesystem reveal right<CR>",desc = "Select Right Open Tree"}
         },
         dependencies = {
-            {"nvim-window-picker"},
             {"nvim-web-devicons"},
             {"plenary.nvim"},
             {"nui.nvim"}
