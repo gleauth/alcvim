@@ -73,5 +73,10 @@ return {
         keys = {
             {"<leader>ny","<cmd>Navbuddy<CR>",desc = "Show Navbuddy Interface"}
         }
+    },
+    {
+        "Bekaboo/dropbar.nvim",
+        enabled = false,
+        -- requirement nvim version 0.10.0
     }
 }
