@@ -2,11 +2,16 @@ return {
     -- LSP 进度提示
     {
         "j-hui/fidget.nvim",
+        version = "legacy",
         lazy = true,
         event = "LspAttach",
         opts = {
             window = {
                 border = "rounded"
+            },
+            debug = {
+                logging = true,
+                strict = true,
             }
         }
     },
