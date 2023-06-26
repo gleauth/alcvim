@@ -85,7 +85,7 @@ return {
         lazy = true,
         cmd = "Registers",
         keys = {
-            {"\"",mode = {"n","v"},desc = "Peek Regeisters Content"},
+            {"\"",mode = {"n","v"}},
             {"<C-R>",mode = "i"}
         },
         opts = {}
